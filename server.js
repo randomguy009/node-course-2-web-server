@@ -24,11 +24,11 @@ hbs.registerHelper('getYear', () => {
     return new Date().getFullYear();
 });
 
-app.use((req, res, next) => {
-    res.render('maintanence.hbs', {
-        msg: 'The Site is under maintanence bhai.'
-    });
-});
+// app.use((req, res, next) => {
+//     res.render('maintanence.hbs', {
+//         msg: 'The Site is under maintanence bhai.'
+//     });
+// });
 
 
 
@@ -53,6 +53,12 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects',
+        welcomeMsg: 'Portfolio Page'
+    });
+});
 
 
 app.listen(port);
